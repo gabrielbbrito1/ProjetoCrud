@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-    <script src="/js/showscript.js"></script>
+    <script src="/public/JS/Main.js"></script>
 </head>
 
 <body>
@@ -79,22 +79,14 @@
                                     <%= details.contato %>
                                 </td>
                                 <td class="inputs-bd">
-                                    <a href="/edit/<%= details._id %>" class="edit" title="Editar" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a
-                  >
-                  <a
-                    href="/delete/<%= details._id %>"
-                    class="delete"
-                    title="Remover"
-                    data-toggle="tooltip"
-                    ><i class="material-icons">&#xE872;</i></a
-                  >
-                </td>
-              </tr>
-              <% }) %>
-            </tbody>
-          </table>
-          <a href="/" class="btn btn-info add-new"
-            ><i class="fa fa-plus"></i> Novo cliente</a
+                                    <a href="/edit/<%= details._id %>" class="edit" title="Editar" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                                    <a href="/delete/<%= details._id %>" class="delete" title="Remover" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                                </td>
+                            </tr>
+                            <% }) %>
+                    </tbody>
+                </table>
+                <a href="/" class="btn btn-info add-new"><i class="fa fa-plus"></i> Novo cliente</a
           >
         </div>
       </div>
