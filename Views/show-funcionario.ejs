@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>CRUDNode</title>
-    <link rel="stylesheet" href="/public/CSS/Main.css" />
+    <link rel="stylesheet" href="/CSS/Main.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -47,7 +47,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <% data.forEach(function(details) { %>
+                        <% funcionario.forEach(function(details) { %>
                             <tr id="myUL">
                                 <td class="inputs-bd">
                                     <%= details.filial %>
@@ -79,14 +79,14 @@
                                     <%= details.contato %>
                                 </td>
                                 <td class="inputs-bd">
-                                    <a href="/edit/<%= details._id %>" class="edit" title="Editar" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                                    <a href="/edit-funcionario/<%= details._id %>" class="edit" title="Editar" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
                                     <a href="/delete/<%= details._id %>" class="delete" title="Remover" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
                                 </td>
                             </tr>
                             <% }) %>
                     </tbody>
                 </table>
-                <a href="/" class="btn btn-info add-new"><i class="fa fa-plus"></i> Novo cliente</a
+                <a href="/" class="btn btn-info add-new"><i class="fa fa-plus"></i> Novo funcionário</a
           >
         </div>
       </div>
