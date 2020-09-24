@@ -1,15 +1,21 @@
-function ValidaCPF() {
+// mascara de cpf
+function MascaraCPF() {
 
-    let ao_cpf = document.forms.form1.ao_cpf.value;
-    if (ao_cpf.match(/\d/g).join('').length === 11) {
-        console.log('cpf invalido.');
-        return;
+    let cpf = document.getElementById('cpf')
+    if (cpf.value.length == 3 || cpf.value.length == 7) {
+        cpf.value += "."
+    } else if (cpf.value.length == 11) {
+        cpf.value += "-"
     }
-    let cpfValido = /^(([0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}))$/;
-    if (cpfValido.test(ao_cpf) == false) {
-        //alert("invalido");
-        let formattedCpf = ao_cpf.replace(/^(\d{3})\D*(\d{3})\D*(\d{3})\D*(\d{2})$/g, '$1.$2.$3-$4');
-        let valorValido = document.getElementById("ao_cpf").value = formattedCpf;
+}
+// mascara de cep
+function cepMask() {
+
+    let cep = document.getElementById('cep')
+    if (cep.value.length == 2) {
+        cep.value += "."
+    } else if (cep.value.length == 6) {
+        cep.value += "-"
     }
 }
 // filtro da pesquisa

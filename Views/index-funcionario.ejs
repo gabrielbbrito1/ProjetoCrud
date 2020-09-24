@@ -7,7 +7,7 @@
     <link rel="canonical" href="/docs/4.5/examples/checkout/">
     <link rel="stylesheet" href="/CSS/Main.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <script src="/public/JS/Main.js"></script>
+    <script src="/JS/Main.js"></script>
     <title>CRUDNode</title>
 </head>
 
@@ -64,28 +64,37 @@
                     <div class="row">
                         <div class="mb-3 mx-4 w-25">
                             <label for="cpf">Cpf</label>
-                            <input type="text" class="form-control" id="cpf" placeholder="" name="cpf" maxlength="11" onkeyup="" required>
+                            <input type="text" class="form-control" id="cpf" placeholder="" name="cpf" maxlength="14" onkeyup="MascaraCPF()" required>
+                            <div class="invalid-feedback">
+                                Preencha este campo
+                            </div>
                         </div>
 
 
                         <div class="mb-3 mx-4 w-25">
                             <label for="cep">Cep</label>
-                            <input type="text" class="form-control" id="cep" placeholder="" name="cep" maxlength="10" required>
+                            <input type="text" class="form-control" id="cep" placeholder="" name="cep" maxlength="10" onkeyup="cepMask()" required>
 
                             <div class="invalid-feedback">
-                                Parametro inválido
+                                Preencha este campo
                             </div>
                         </div>
 
                         <div class="mb-3 mx-4 w-25">
                             <label for="cidade">Cidade</label>
                             <input type="text" class="form-control" name="cidade" required>
+                            <div class="invalid-feedback">
+                                Preencha este campo
+                            </div>
                         </div>
 
                         <div class="row">
                             <div class="col-md-3 mb-3">
                                 <label for="cep">Estado</label>
                                 <input type="text" class="form-control" name="estado" required>
+                                <div class="invalid-feedback">
+                                    Preencha este campo
+                                </div>
 
                             </div>
 
@@ -94,7 +103,7 @@
                                 <input type="text" class="form-control" name="endereco" placeholder="" required>
 
                                 <div class="invalid-feedback">
-                                    Parametro inválido
+                                    Preencha este campo
                                 </div>
                             </div>
 
@@ -103,7 +112,7 @@
                                 <input type="text" class="form-control" name="funcao" placeholder="EX: Gestor do RH" required>
 
                                 <div class="invalid-feedback">
-                                    Parametro inválido
+                                    Preencha este campo
                                 </div>
                             </div>
 
@@ -115,10 +124,10 @@
                                     </div>
                                     <div class="mb-3 mx-3 w-25">
                                         <label for="email">Filial</label>
-                                        <input type="text" class="form-control w-50" name="filial" required>
+                                        <input type="text" class="form-control w-50" name="filial" placeholder=" EX: Pituba" required>
 
                                         <div class="invalid-feedback">
-                                            Parametro obrigatório
+                                            Preencha este campo
                                         </div>
                                     </div>
                                 </div>
