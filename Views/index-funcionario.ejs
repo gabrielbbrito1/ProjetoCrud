@@ -38,7 +38,7 @@
 
         <form action="/show-funcionario" method="POST">
             <div class="col-md-12 order-md-1">
-                <h4 class="text-center mb-4">Dados do funcionário</h4>
+                <h4 class=" mb-4">Dados do funcionário</h4>
                 <form class="dados-pessoais" novalidate>
                     <div class="row">
                         <div class="col-md-5 mb-3">
@@ -50,7 +50,7 @@
                             </div>
                         </div>
 
-                        <div class="col-md-5 mb-3">
+                        <div class="col-md-6 mb-3">
                             <label for="lastName">Sobrenome</label>
                             <input type="text" class="form-control" name="sobrenome" value="" required>
 
@@ -62,15 +62,15 @@
                     </div>
 
                     <div class="row">
-                        <div class="mb-3 mx-3    w-25">
+                        <div class="mb-3 mx-4 w-25">
                             <label for="cpf">Cpf</label>
-                            <input type="text" class="form-control" id="cpf" placeholder="xxx.xxx.xxx-xx" name="CPF" maxlength="11" onkeyup="" required>
+                            <input type="text" class="form-control" id="cpf" placeholder="" name="cpf" maxlength="11" onkeyup="" required>
                         </div>
 
 
-                        <div class="mb-3 mx-2 w-25">
+                        <div class="mb-3 mx-4 w-25">
                             <label for="cep">Cep</label>
-                            <input type="text" class="form-control" id="cep" placeholder="xx.xxx-xxx" name="CEP" maxlength="10" required>
+                            <input type="text" class="form-control" id="cep" placeholder="" name="cep" maxlength="10" required>
 
                             <div class="invalid-feedback">
                                 Parametro inválido
@@ -98,7 +98,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-5 mb-3">
+                            <div class="col-md-4 mb-3">
                                 <label for="funcao">Função</label>
                                 <input type="text" class="form-control" name="funcao" placeholder="EX: Gestor do RH" required>
 
@@ -106,32 +106,33 @@
                                     Parametro inválido
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-6 mb-3">
-                                    <label for="contato2">Contato</label>
-                                    <input type="text" class="form-control" id="contato" placeholder="(xx) 99999-9999" name="contato" maxlength="14" required>
-                                </div>
-                            </div>
-                            <div class="justify-content-center mb-3">
-                                <label for="email">Filial</label>
-                                <input type="text" class="form-control w-25" name="filial" required>
 
-                                <div class="invalid-feedback">
-                                    Parametro obrigatório
+                            <div class="col-md-12 mb-3">
+                                <div class="row">
+                                    <div class="mb-3 mx-1 w-50">
+                                        <label for="contato2" class=" text-center">Contato</label>
+                                        <input type="text" class="form-control w-50" id="contato" placeholder="(xx) 99999-9999" name="contato" maxlength="14" required>
+                                    </div>
+                                    <div class="mb-3 mx-3 w-25">
+                                        <label for="email">Filial</label>
+                                        <input type="text" class="form-control w-50" name="filial" required>
+
+                                        <div class="invalid-feedback">
+                                            Parametro obrigatório
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-            </div>
 
-            <hr class="mb-3">
-            <button class="btn btn-primary btn-lg btn-block" type="submit">Enviar</button>
-    </div>
-    </form>
-    </div>
-    <footer class="my-5 pt-5 text-muted text-center text-small">
-        <p class="mb-1">&copy; 2020-2020 Biblioteca UNIFACS</p>
-    </footer>
+                        <hr class="mb-3">
+                        <button class="btn btn-primary btn-lg btn-block" type="submit">Enviar</button>
+                    </div>
+                </form>
+            </div>
+            <footer class="my-5 pt-5 text-muted text-center text-small">
+                <p class="mb-1">&copy; 2020-2020 Biblioteca UNIFACS</p>
+            </footer>
 
 
 </body>
