@@ -9,11 +9,11 @@ const ObjectId = require('mongodb').ObjectID;
 
 const MongoClient = require('mongodb').MongoClient;
 
-const uri = "mongodb+srv://admin:admin@crudnode.iyhug.mongodb.net/CRUDNode?retryWrites=true&w=majority"
+const uri = "mongodb+srv://desafio1cdm:desafio1cdm@desafio1cdm.njqir.mongodb.net/Desafio1CDM?retryWrites=true&w=majority"
 
 MongoClient.connect(uri, (err, client) => {
     if (err) return console.log(err);
-    db = client.db('CRUDNode');
+    db = client.db('Desafio1CDM');
 
     app.listen(3000, () => {
         console.log('server running on port 3000');
@@ -31,20 +31,20 @@ app.get('/', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-    let cursor = db.collection('data').find();
+    let cursor = db.collection('funcionario').find();
 
 });
 
 app.get('/show', (req, res) => {
-    db.collection('data').find().toArray((err, results) => {
+    db.collection('funcionario').find().toArray((err, results) => {
         if (err) return console.log(err)
-        res.render('show.ejs', { data: results })
+        res.render('show.ejs', { funcionario: results })
 
     })
 })
 
 app.post('/show', (req, res) => {
-    db.collection('data').save(req.body, (err, result) => {
+    db.collection('funcionario').save(req.body, (err, result) => {
         if (err) return console.log(err)
 
         console.log('Salvo no Banco de Dados')
@@ -56,9 +56,9 @@ app.route('/edit/:id')
     .get((req, res) => {
         let id = req.params.id
 
-        db.collection('data').find(ObjectId(id)).toArray((err, result) => {
+        db.collection('funcionario').find(ObjectId(id)).toArray((err, result) => {
             if (err) return res.send(err)
-            res.render('edit.ejs', { data: result })
+            res.render('edit.ejs', { funcionario: result })
         })
     })
     .post((req, res) => {
@@ -74,7 +74,7 @@ app.route('/edit/:id')
         let funcao = req.body.funcao
         let contato = req.body.contato
 
-        db.collection('data').updateOne({ _id: ObjectID(id) }, {
+        db.collection('funcionario').updateOne({ _id: ObjectID(id) }, {
             $set: {
                 filial: filial,
                 nome: nome,
@@ -97,7 +97,7 @@ app.route('/delete/:id')
     .get((req, res) => {
         let id = req.params.id
 
-        db.collection('data').deleteOne({ _id: ObjectId(id) }, (err, result) => {
+        db.collection('funcionario').deleteOne({ _id: ObjectId(id) }, (err, result) => {
             if (err) return res.send(500, err)
             console.log('Deletando do banco de dados!')
             res.redirect('/show')
